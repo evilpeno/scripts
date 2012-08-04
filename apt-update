@@ -1,0 +1,17 @@
+#!/bin/bash
+# 
+# Run aptitude update, safe-upgrade, clean on multiple servers.
+
+hosts="host1 host2 host3"
+
+# run aptitude update, etc. on each server
+
+for i in $hosts;
+do
+  echo Updating '\033[31m'$i;
+  echo -n '\033[00m'
+  ssh root@$i 'aptitude update && aptitude -y safe-upgrade && aptitude clean';
+  clear
+  echo $i '\033[31m' DONE
+  echo -n '\033[00m'
+done;
