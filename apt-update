@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # 
 # Run aptitude update, safe-upgrade, clean on multiple servers.
 
