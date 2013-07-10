@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Quick dirty script to check disk space on multiple servers
+# Assumes that you're using ssh key authentication
+
+hosts="host1 host2 host3 host4 host5"
+
+
+for i in $hosts;
+do
+      echo Checking Disk Space '\033[31m'$i;
+        echo '\033[00m'
+          ssh user@$i "df -H / | sed '1d' | awk '{print $5}'";
+#  echo $i '\033[31m' DONE
+            echo  '\033[00m'
+            done;
