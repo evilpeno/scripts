@@ -2,12 +2,8 @@
 # quick and dirty script to add vmware tools repo on ubuntu, YMMV
 
 echo "Add the GPG keys"
-wget -qO -
-http://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-DSA-KEY.pub | sudo
-apt-key add -
-wget -qO -
-http://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-RSA-KEY.pub | sudo
-apt-key add -
+wget -qO - http://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-DSA-KEY.pub | sudo apt-key add -
+wget -qO - http://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-RSA-KEY.pub | sudo apt-key add -
 
 echo "Add the repo itself"
 echo deb http://packages.vmware.com/tools/esx/latest/ubuntu $(lsb_release -sc)
